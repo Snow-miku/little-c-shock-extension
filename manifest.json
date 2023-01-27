@@ -1,13 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "Little C Shock",
+    "name": "Little C-Shock",
     "description": "This extension tracks user's ",
     "version": "1.0",
     "action": {
         "default_popup": "popup/popup.html",
         "default_icon": "icon.png"
     },
-    "options_page": "options/options.html",
     "permissions": [
         "storage"
     ],

@@ -1,5 +1,6 @@
 body {
   width: max-content;
+  background-color: #ee1c25;
   margin: 0;
   font-size: 1rem;
   user-select: none;
@@ -7,8 +8,8 @@ body {
 
 .popup-title {
   font-weight: 900;
-  background-color: blueviolet;
-  color: white;
+  background-color: Yellow;
+  color: black;
   width: 100%;
   padding: 5px;
 }
@@ -28,6 +29,7 @@ body {
   padding: 5px;
 }
 
-button {
-  width: 100%;
+img {
+  margin: 20%;
+  max-width: 50%;
 }
