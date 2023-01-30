@@ -8,16 +8,18 @@
         "default_icon": "icon.png"
     },
     "permissions": [
+        "activeTab",
         "storage"
     ],
     "content_scripts": [
         {
             "matches": [
-                "*://*/*"
+                "<all_urls>"
             ],
             "js": [
-                "content-scripts/replace.js"
-            ]
+                "content-scripts/content.js"
+            ],
+            "run_at": "document_idle"
         }
     ]
 }
