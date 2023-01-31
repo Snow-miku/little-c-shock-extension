@@ -1,7 +1,7 @@
 const toggleCheckbox = document.getElementById("toggleCheckbox");
 
 async function updateContentScript() {
-  console.log("in the function");
+  console.log("updateContentScript");
 
   // This code came from the Chrome extension documentation. It just gets
   // the currently active tab on the last focused window to ensure that we
@@ -28,7 +28,9 @@ toggleCheckbox.addEventListener("change", (e) => updateContentScript());
 // the current value of "color"
 chrome.storage.sync.get(["enabled"], (result) => {
   // Console.log the result
-  console.log(result);
+  console.log("in popup.js sync function");
   // Set the state of the toggleCheckbox input to whatever the stored boolean is
   toggleCheckbox.checked = result.enabled;
+
+  console.log("enabled: " + result);
 });
