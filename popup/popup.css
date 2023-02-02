@@ -1,12 +1,15 @@
 body {
-  width: max-content;
+  width: 40rem;
   background-color: #ee1c25;
   margin: 0;
   font-size: 1rem;
   user-select: none;
+  text-align: center;
 }
 
 .popup-title {
+  text-align: center;
+  font-size: 2em;
   font-weight: 900;
   background-color: Yellow;
   color: black;
@@ -26,10 +29,13 @@ body {
 
 .popup-content {
   font-family: monospace;
-  padding: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem;
 }
 
 img {
-  margin: 20%;
-  max-width: 50%;
+  display: inline-block;
+  margin: 0 auto 1.5rem 0;
+  max-width: 80%;
 }

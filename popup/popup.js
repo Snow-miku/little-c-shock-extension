@@ -1,4 +1,6 @@
 const toggleCheckbox = document.getElementById("toggleCheckbox");
+const image = document.getElementById("picture");
+console.log(image);
 
 async function updateContentScript() {
   console.log("updateContentScript");
@@ -13,24 +15,35 @@ async function updateContentScript() {
 
   if (toggleCheckbox.checked) {
     console.log("checked");
+    updateImage(true);
     chrome.tabs.sendMessage(tab.id, { enabled: true });
     chrome.storage.sync.set({ enabled: true });
   } else {
     console.log("not checked");
+    updateImage(false);
     chrome.tabs.sendMessage(tab.id, { enabled: false });
     chrome.storage.sync.set({ enabled: false });
+  }
+}
+
+async function updateImage(enabled) {
+  if(enabled) {
+    image.src = "../images/haojing-zhanlang.png";
+  } else {
+    image.src = "../images/haojing-normal.png";
   }
 }
 
 toggleCheckbox.addEventListener("change", (e) => updateContentScript());
 
 // This code will run when the popup is opened. It asks chrome storage to get
-// the current value of "color"
+// the current value of "enabled"
 chrome.storage.sync.get(["enabled"], (result) => {
   // Console.log the result
   console.log("in popup.js sync function");
   // Set the state of the toggleCheckbox input to whatever the stored boolean is
   toggleCheckbox.checked = result.enabled;
+  updateContentScript();
 
   console.log("enabled: " + result);
 });
